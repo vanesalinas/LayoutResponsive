@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+.producto-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    height: 150px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.producto-card img {
+    height: 130px;
+    width: auto;
+    justify-self: center;
+}
+
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.precio {
+    font-size: 1.2em;
+    color: #1b8a1b;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    
+}
