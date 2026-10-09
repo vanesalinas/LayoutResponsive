@@ -8,7 +8,13 @@
 </head>
 <body>
     <header>
-        <nav>
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <nav id="menu-principal">
             <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Productos</a></li>
@@ -16,8 +22,14 @@
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
+
         <h1>Tienda de Ropa</h1>
-        <i class="fas fa-bars">Carrito</i>
+
+        <a href="#" class="carrito" aria-label="Carrito">
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+            </svg>
+        </a>
     </header>
     <main>
         <section>
@@ -25,7 +37,7 @@
                 <img src="./img/camiseta morada.png" alt="Producto 1">
                 <div class="producto-info">
                     <h3>Producto 1</h3>
-                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non soluta labore voluptatibus consectetur praesentium magni nostrum cumque.</p>
+                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non soluta labore voluptatibus consectetur.</p>
                     <p class="precio">$19.99</p>
                 </div>
             </article>
@@ -33,7 +45,7 @@
                 <img src="./img/polo combinada.png" alt="Producto 2">
                 <div class="producto-info">
                     <h3>Producto 2</h3>
-                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non soluta labore voluptatibus consectetur praesentium magni nostrum cumque.</p>
+                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non soluta labore voluptatibus consectetur.</p>
                     <p class="precio">$29.99</p>
                 </div>
             </article>
@@ -41,7 +53,7 @@
                 <img src="./img/polo rosa.png" alt="Producto 3">
                 <div class="producto-info">
                     <h3>Producto 3</h3>
-                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non soluta labore voluptatibus consectetur praesentium magni nostrum cumque.</p>
+                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non soluta labore voluptatibus consectetur.</p>
                     <p class="precio">$39.99</p>
                 </div>
             </article>
@@ -49,11 +61,22 @@
                 <img src="./img/polo verde.png" alt="Producto 4">
                 <div class="producto-info">
                     <h3>Producto 4</h3>
-                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non soluta labore voluptatibus consectetur praesentium magni nostrum cumque.</p>
+                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda non soluta labore voluptatibus consectetur.</p>
                     <p class="precio">$69.99</p>
                 </div>
             </article>
         </section>
     </main>
+
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.getElementById('menu-principal');
+
+        toggle.addEventListener('click', () => {
+            const abierto = menu.classList.toggle('abierto');
+            toggle.setAttribute('aria-expanded', abierto);
+            toggle.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+        });
+    </script>
 </body>
 </html>

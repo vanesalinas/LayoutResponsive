@@ -10,6 +10,56 @@ body {
     color: #333;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+}
+
+nav.abierto {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    text-align: left;
+    background-color: #fff;
+    padding: 10px;
+    margin: 3px 0;
+    border-radius: 6px;
+    border: 1px solid #7e7e7e42;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+.carrito {
+    display: inline-flex;
+    padding: 8px;
+    color: #333;   
+}
+
 main {
     padding: 20px;
 }
@@ -46,5 +96,9 @@ main {
 }
 
 @media (min-width: 768px) {
-    
+    main section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
